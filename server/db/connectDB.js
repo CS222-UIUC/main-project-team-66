@@ -9,7 +9,7 @@ const connectDB = async () => {
 
     } catch (error) {
         console.log("Error connection to MongoDB : ", error.message)
-        process.exist(1) // exiting the process with failure as 1 is failiure
+        process.exit(1) // exiting the process with failure as 1 is failiure
     }
 }
 
