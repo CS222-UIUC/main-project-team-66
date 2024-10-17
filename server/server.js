@@ -1,7 +1,10 @@
 const express = require("express");
+const bodyParser = require('body-parser');
 const cors = require("cors");
 const dotenv = require("dotenv");
 const { connectDB } = require("./db/connectDB");
+const AuthRouter = require('./Routes/AuthRouter');
+
 
 
 // loading in the environment variables 
@@ -13,9 +16,10 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.use(bodyParser.json());
+app.use('/auth', AuthRouter);
 
 app.get("/api", (req,res) => {
-    res.json({"dummy_data" : ["one", "two", "three"]});
 });
 
 app.listen(8080, () => {
