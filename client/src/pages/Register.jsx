@@ -2,6 +2,10 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {ToastContainer} from 'react-toastify'
 import { handleError, handleSuccess } from '../utils'
+// import illiniLogo from "client/src/assets_images/illinois_fighting_illini_logo_alternate_20141141.png";
+// import illiniLogo from "@/assets_images/illinois_fighting_illini_logo_alternate_20141141.png";
+// import campusImage from 'client/src/assets_images/drawing-rear-view-bachelor-campus-walking-after-college-building-continuous-line-art_7647-2800.jpg copy.png';
+// import 'client/src/styles/Register.css';
 
 function Register() {
 
@@ -59,45 +63,111 @@ function Register() {
 
 // Basic Registration Template - Frontend needs to fix
   return (
-    <div className='container'>
-      <h1>Register</h1>
-      <form onSubmit={handleSignup}>
-        <div>
-          <label htmlFor="name">Name</label>
-          <input 
+    // <div className='container'>
+    //   <h1>Register</h1>
+    //   <form onSubmit={handleSignup}>
+    //     <div>
+    //       <label htmlFor="name">Name</label>
+    //       <input 
+    //           onChange={handleChange}
+    //           type="text"
+    //           name="name"
+    //           autoFocus
+    //           placeholder='Enter your name'
+    //           value={registerInfo.name}
+    //       />
+    //     </div>
+    //     <div>
+    //       <label htmlFor="email">Email</label>
+    //       <input
+    //           onChange={handleChange}
+    //           type="email"
+    //           name="email"
+    //           placeholder='Enter your email'
+    //           value={registerInfo.email}
+    //       />
+    //     </div>
+    //     <div>
+    //       <label htmlFor="password">Password</label>
+    //       <input 
+    //           onChange={handleChange}
+    //           type="password"
+    //           name="password"
+    //           placeholder='Enter your password...'
+    //           value={registerInfo.password}
+    //       />
+    //     </div>
+    //     <button type='submit'>Signup</button>
+    //     <span>Already have an account?
+    //         <Link to="/login">Login</Link>
+    //     </span>
+    //   </form>
+    //   <ToastContainer />
+    // </div>
+
+    <div className="container">
+      <div className="left-section">
+        <h1>UIUC Marketplace</h1>
+        <div className="sign-options">
+          <Link to="/login" className="sign-in">
+            Sign In
+          </Link>
+          <span className="sign-up"> | </span>
+          <Link to="/signup" className="sign-up">
+            Sign Up
+          </Link>
+        </div>
+        <div className="form-container">
+          <h2>Welcome Illini!</h2>
+          <form onSubmit={handleSignup}>
+            <label htmlFor="name">Name</label>
+            <input
               onChange={handleChange}
               type="text"
               name="name"
-              autoFocus
-              placeholder='Enter your name'
+              id="name"
+              placeholder="Enter your name"
               value={registerInfo.name}
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
+              required
+            />
+            <label htmlFor="email">Email ID</label>
+            <input
               onChange={handleChange}
               type="email"
               name="email"
-              placeholder='Enter your email'
+              id="email"
+              placeholder="Enter your email"
               value={registerInfo.email}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input 
+              required
+            />
+            <label htmlFor="password">Password</label>
+            <input
               onChange={handleChange}
               type="password"
               name="password"
-              placeholder='Enter your password...'
+              id="password"
+              placeholder="Enter your password..."
               value={registerInfo.password}
-          />
+              required
+            />
+            {/* <label htmlFor="confirmPassword">Confirm Password</label>
+            <input
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+              placeholder="Confirm your password"
+              required
+            /> */}
+            <button type="submit">Next</button>
+          </form>
         </div>
-        <button type='submit'>Signup</button>
-        <span>Already have an account?
-            <Link to="/login">Login</Link>
-        </span>
-      </form>
+      </div>
+      <div className="right-section">
+        <div className="logo">
+            <img src={illiniLogo} alt="UIUC Logo" />
+        </div>
+        <img src={campusImage} alt="UIUC Campus" className="campus-image" />
+      </div>
       <ToastContainer />
     </div>
   )
