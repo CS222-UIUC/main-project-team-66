@@ -1,16 +1,12 @@
 const {signupValidation, loginValidation} = require("../Middleware/AuthValidation.js");
 const UserModel = require('../db/user');
 const request = require('supertest');
-const app = require('../server.js')
+const app = require('../app.js')
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
 
 jest.mock('../db/user');
-
-afterAll(async () => {
-    await mongoose.connection.close();
-});
 
 
 test('signup - should return 400 if validation fails', () => {
@@ -68,22 +64,21 @@ test('login - success', () => {
 });
 
 
-test('should create a new user with valid data', async () => {
-    UserModel.findOne.mockResolvedValue(null);
-    UserModel.prototype.save = jest.fn().mockResolvedValue(true);
+test('should return 409 if user already exists', async () => {
+    UserModel.findOne.mockResolvedValue({ email: 'test@gmail.com' });
 
     const response = await request(app)
         .post('/auth/signup')
         .send({
             name: 'Test',
             email: 'test@gmail.com',
-            password: '12345',
+            password: '12345'
         });
 
-    expect(response.status).toBe(201);
+    expect(response.status).toBe(409);
     expect(response.body).toEqual({
-        message: "Signup Successful",
-        success: true,
+        message: "User already exists",
+        success: false
     });
 });
 
