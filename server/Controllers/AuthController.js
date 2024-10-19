@@ -1,7 +1,9 @@
+const dotenv = require("dotenv");
 const bcrypt = require('bcryptjs')
 const UserModel = require('../db/user')
 const jwt = require('jsonwebtoken')
 
+dotenv.config()
 const signup = async (req,res) => {
     try {
         const {name, email, password}  = req.body;
@@ -19,6 +21,7 @@ const signup = async (req,res) => {
                 success: true
             })
     } catch (error) {
+        console.error("Signup error:", error);
         res.status(500)
             .json({
                 message: "Internal server error",
@@ -56,6 +59,7 @@ const login = async (req,res) => {
                 name: user.name
             })
     } catch (error) {
+        console.error("Login error:", error);
         res.status(500)
             .json({
                 message: "Internal server error",

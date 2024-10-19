@@ -13,7 +13,7 @@ function Home() {
 
   // All of the logout functionality
   // Deletes stored token
-  const handleLogout = (e)=> {
+  const handleLogout = ()=> {
     localStorage.removeItem('token');
     localStorage.removeItem('loggedInUser');
     handleSuccess('User logged out');

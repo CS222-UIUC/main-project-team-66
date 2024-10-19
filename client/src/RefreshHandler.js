@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 // Function to prevent logged in user from going to login/register pages
 
 function RefreshHandler({setIsAuthenticated}) {
@@ -22,5 +22,8 @@ function RefreshHandler({setIsAuthenticated}) {
     null
   )
 }
+RefreshHandler.propTypes = {
+    setIsAuthenticated: PropTypes.func.isRequired
+};
 
 export default RefreshHandler

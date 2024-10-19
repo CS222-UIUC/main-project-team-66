@@ -19,10 +19,12 @@ app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use('/auth', AuthRouter);
 
-app.get("/api", (req,res) => {
-});
+// app.get("/api", (req,res) => {
+// });
 
 app.listen(8080, () => {
     connectDB();
     console.log("server started on port 8080");
 });
+
+module.exports = app;

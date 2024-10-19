@@ -1,22 +1,24 @@
+import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import './App.css'
-import axios from "axios";
+// import axios from "axios";
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Home from './pages/Home';
 import RefreshHandler from './RefreshHandler';
+import PropTypes from 'prop-types';
 
 function App() {
 
-  const fetchAPI = async () => {
-    const response = await axios.get("http://localhost:8080/api");
+  // const fetchAPI = async () => {
+  //   const response = await axios.get("http://localhost:8080/api");
  
-  };
+  // };
 
-  useEffect(() =>{
-    fetchAPI();
-  }, []);
+  // useEffect(() =>{
+  //   fetchAPI();
+  // }, []);
 
   const[isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -24,6 +26,9 @@ function App() {
   const PrivateRoute = ({element})=> {
     return isAuthenticated ? element : <Navigate to="/login"/>
   }
+  PrivateRoute.propTypes = {
+    element: PropTypes.element.isRequired
+  };
   return (
     <div className='App'>
       <RefreshHandler setIsAuthenticated={setIsAuthenticated} />
