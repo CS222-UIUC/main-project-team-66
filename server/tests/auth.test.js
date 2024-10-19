@@ -2,7 +2,6 @@ const {signupValidation, loginValidation} = require("../Middleware/AuthValidatio
 const UserModel = require('../db/user');
 const request = require('supertest');
 const app = require('../app.js')
-const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
 
