@@ -84,7 +84,7 @@ function Login() {
         </div>
         <button type='submit'>Login</button>
         <span>Don't have an account?
-            <Link to="/register">Login</Link>
+            <Link to="/register">Sign up</Link>
         </span>
       </form>
       <ToastContainer />
