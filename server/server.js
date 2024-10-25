@@ -4,6 +4,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const { connectDB } = require("./db/connectDB");
 const AuthRouter = require('./Routes/AuthRouter');
+const ItemRouter = require('./routes/ItemRouter');
 
 
 
@@ -18,6 +19,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use('/auth', AuthRouter);
+app.use('/items', ItemRouter);
 
 app.get("/api", (req,res) => {
 });
