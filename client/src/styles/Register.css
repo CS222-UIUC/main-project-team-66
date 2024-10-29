@@ -1,15 +1,16 @@
 /* Register.css */
-body,
-html {
+html, 
+body {
   margin: 0;
   padding: 0;
   height: 100%;
+  width: 100%;
   font-family: "Playfair Display", serif;
 }
-
 .container {
   display: flex;
   height: 100%;
+  width: 100%;
   position: relative;
 }
 
@@ -19,6 +20,7 @@ html {
   padding: 2rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .right-section {
@@ -38,9 +40,9 @@ h1 {
 }
 
 .form-container {
-  max-width: 400px;
+  max-width: 100%;
+  max-height: 100%;
   margin: auto;
-  padding-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,10 +50,10 @@ h1 {
 
 h2 {
   text-align: center;
-  color: rgba(255, 151, 145, 100);
+  color: rgba(255, 151, 145, 1); 
   font-size: 2rem;
-  margin-bottom: 2rem;
-  margin-top: -1rem;
+  margin-bottom: 3rem;
+  margin-top: -2rem; 
 }
 
 label {
@@ -61,7 +63,7 @@ label {
 }
 
 input {
-  width: 500px;
+  width: 100%; 
   padding: 0.75rem;
   margin-bottom: 1.5rem;
   background-color: rgba(255, 255, 255, 0.2);
@@ -71,7 +73,7 @@ input {
 }
 
 button {
-  width: 500px;
+  width: 100%; /* Adjusted to be responsive */
   padding: 0.75rem;
   background-color: rgba(232, 74, 39, 0.7);
   color: white;
@@ -80,7 +82,7 @@ button {
   cursor: pointer;
   font-family: "Playfair Display", serif;
   font-size: 1rem;
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
 }
 
 button:hover {
@@ -98,26 +100,10 @@ button:hover {
 
 .sign-options {
   text-align: center;
-  padding-right: 1rem;
+  margin-bottom: 1.5rem;
   margin-top: 1.5rem;
 }
 
 .sign-options span {
-  margin-left: 0.5rem;
-}
-
-.sign-in {
-  color: white;
-}
-
-.sign-up {
-  color: rgba(255, 151, 145, 100);
-  font-size: 20px;
-}
-
-.campus-image {
-  width: 120%;
-  height: auto;
-  margin-top: auto;
-  margin-right: auto;
+  margin-left: 0.5rem
 }
