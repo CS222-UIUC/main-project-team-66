@@ -8,12 +8,13 @@ const itemValidation = (req, res, next) => {
         category: Joi.string().required(),
         images: Joi.array().items(Joi.string()).optional(), 
     });
-
+    
     const { error } = schema.validate(req.body);
+
     if (error) {
-        return res.status(400).json({ message: "Bad request", error: error.details });
+        return res.status(400).json({ message: "Bad Request", error: error.details });
     }
     next();
 };
 
-module.exports = itemValidation;
+module.exports = {itemValidation};

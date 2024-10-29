@@ -6,7 +6,7 @@ import { handleError, handleSuccess } from '../utils'
 function Register() {
 
   const[registerInfo,setRegisterInfo] = useState({
-    name: '',
+    name: '', 
     email: '',
     password: ''
   })

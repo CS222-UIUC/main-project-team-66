@@ -3,10 +3,8 @@ const bodyParser = require('body-parser');
 const cors = require("cors");
 const dotenv = require("dotenv");
 const { connectDB } = require("./db/connectDB");
-const AuthRouter = require('./Routes/AuthRouter');
+const AuthRouter = require('./routes/AuthRouter');
 const ItemRouter = require('./routes/ItemRouter');
-
-
 
 // loading in the environment variables 
 dotenv.config()
@@ -21,8 +19,7 @@ app.use(bodyParser.json());
 app.use('/auth', AuthRouter);
 app.use('/items', ItemRouter);
 
-app.get("/api", (req,res) => {
-});
+app.get("/api", (req,res) => {});
 
 app.listen(8080, () => {
     connectDB();

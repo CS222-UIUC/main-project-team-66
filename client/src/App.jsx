@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Home from './pages/Home';
 import RefreshHandler from './RefreshHandler';
+import Create from './pages/Create';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/home' element={<PrivateRoute element={<Home />}/>} />
+        <Route path='/create' element={<PrivateRoute element={<Create />}/>} />
       </Routes>
     </div>
   )

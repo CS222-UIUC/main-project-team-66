@@ -20,8 +20,8 @@ const ItemSchema = new Schema({
         required: true
     },
     images: [{
-        type: String,
-        required: true
+        type: String
+        // required: true
     }],
     seller: {
         type: mongoose.Schema.Types.ObjectId,
