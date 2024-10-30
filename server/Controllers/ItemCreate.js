@@ -7,7 +7,8 @@ const createItem = async (req,res) => {
         console.log("The user is ")
         console.log(req.user)
         console.log("after")
-        const seller = req.user.name;  
+        const seller = req.user.email;  
+        console.log(seller)
 
         const newItem = new ItemModel({
             title,
