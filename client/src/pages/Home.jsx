@@ -22,9 +22,10 @@ function Home() {
     },1000)
   }
 
-  const handleCreatePost = () => {
+  const handleCreatePost = (e) => {
     navigate('/create');
   }
+
 
   return (
     <div>

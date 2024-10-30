@@ -6,6 +6,8 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Home from './pages/Home';
 import RefreshHandler from './RefreshHandler';
+import Navbar from './pages/Navbar';
+import Create from './pages/Create';
 
 function App() {
 
