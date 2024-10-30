@@ -104,7 +104,7 @@ function Login() {
             Sign In
           </Link>
           <span className="separator"> | </span>
-          <Link to="/signup" className="sign-up">
+          <Link to="/register" className="sign-up">
             Sign Up
           </Link>
         </div>
