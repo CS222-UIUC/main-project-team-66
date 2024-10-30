@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { handleError, handleSuccess } from '../utils';
-import axios from 'axios';
 
 function Create() {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const [itemInfo, setItemInfo] = useState({
         title: '',
         description: '',
@@ -27,6 +26,10 @@ function Create() {
         setItemInfo({ ...itemInfo, images: Array.from(e.target.files) });
         console.log(e.target.files)
     };
+
+    const handleHome = (e) => {
+        navigate('/home');
+    }
 
     // validating the input and saving
     const handleSubmit = async (e) => {
@@ -124,6 +127,8 @@ function Create() {
                     />
                 </div>
                 <button type="submit">Create Post</button>
+                <button onClick={handleHome}>Back to Home</button>
+
             </form>
             <ToastContainer />
         </div>
