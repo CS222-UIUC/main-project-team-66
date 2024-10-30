@@ -11,12 +11,11 @@ function Create() {
         description: '',
         price: 0,
         category: '',
-        images: [],
+        images: []
     });
 
     // storing the details added to the form 
     const handleChange = (e) => {
-        console.log("handle change")
         const { name, value } = e.target;
         setItemInfo({ ...itemInfo, [name]: value });
         console.log(name, value)

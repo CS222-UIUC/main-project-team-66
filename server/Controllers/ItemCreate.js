@@ -4,7 +4,10 @@ const createItem = async (req,res) => {
     try {
         console.log("inside Create Item");
         const { title, description, price, category, images } = req.body; 
-        const seller = req.user._id;  
+        console.log("The user is ")
+        console.log(req.user)
+        console.log("after")
+        const seller = req.user.name;  
 
         const newItem = new ItemModel({
             title,
