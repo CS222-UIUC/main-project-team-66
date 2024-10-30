@@ -6,7 +6,6 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Home from './pages/Home';
 import RefreshHandler from './RefreshHandler';
-import Create from './pages/Create';
 
 function App() {
 
@@ -28,6 +27,7 @@ function App() {
   return (
     <div className='App'>
       <RefreshHandler setIsAuthenticated={setIsAuthenticated} />
+      <Navbar />
       <Routes>
         <Route path='/' element={<Navigate to="/login"/>}/>
         <Route path='/login' element={<Login />} />
