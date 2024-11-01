@@ -57,6 +57,7 @@ function Create() {
 
             if (success) {
                 handleSuccess(message);
+                navigate('/home');
             } else if (error) {
                 // const details = error?.details(0).message;
                 //handleError(details);
