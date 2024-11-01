@@ -22,11 +22,16 @@ function Home() {
     },1000)
   }
 
+  const handleCreatePost = (e) => {
+    navigate('/create');
+  }
+
 
   return (
     <div>
       <h1>Welcome {loggedInUser}</h1>
       <button onClick={handleLogout}>Logout</button>
+      <button onClick={handleCreatePost}>Create Post</button>
       <ToastContainer />
     </div>
   )
