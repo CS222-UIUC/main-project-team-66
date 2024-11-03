@@ -8,6 +8,7 @@ import { handleError, handleSuccess } from '../utils'
 import illiniLogo from '../assets_images/illinois_fighting_illini_logo_alternate_20141141.png';
 import campusImage from '../assets_images/drawing-rear-view-bachelor-campus-walking-after-college-building-continuous-line-art_7647-2800.jpg copy.png';
 import '../styles/Login.css'
+import { useAuth } from '../AuthContext';
 
 
 function Login() {
@@ -18,6 +19,8 @@ function Login() {
   })
   // Logic for when the user fills out the fields in the form
   const navigate = useNavigate();
+  const { login } = useAuth();
+
   const handleChange = (e)=>{
     const {name, value} = e.target;
     console.log(name, value);
@@ -47,6 +50,7 @@ function Login() {
       const {success, message, jwtToken, name, error} = result;
       if (success) {
         handleSuccess(message);
+        login({ token: jwtToken, name });
         localStorage.setItem('token', jwtToken);
         localStorage.setItem('loggedInUser', name);
         setTimeout(()=> {
@@ -64,38 +68,7 @@ function Login() {
     }
   }
 
-  // Basic HTML login form - Frontend needs to fix
   return (
-    // <div className='container'>
-    //   <h1>Login</h1>
-    //   <form onSubmit={handleLogin}>
-    //     <div>
-    //       <label htmlFor="email">Email</label>
-    //       <input
-    //           onChange={handleChange}
-    //           type="email"
-    //           name="email"
-    //           placeholder='Enter your email'
-    //           value={loginInfo.email}
-    //       />
-    //     </div>
-    //     <div>
-    //       <label htmlFor="password">Password</label>
-    //       <input 
-    //           onChange={handleChange}
-    //           type="password"
-    //           name="password"
-    //           placeholder='Enter your password...'
-    //           value={loginInfo.password}
-    //       />
-    //     </div>
-    //     <button type='submit'>Login</button>
-    //     <span>Don't have an account?
-    //         <Link to="/register">Login</Link>
-    //     </span>
-    //   </form>
-    //   <ToastContainer />
-    // </div>
     <div className="container">
       <div className="left-section">
         <h1>UIUC Marketplace</h1>

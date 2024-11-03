@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import RefreshHandler from './RefreshHandler';
 import Navbar from './pages/Navbar';
 import Create from './pages/Create';
+import { AuthProvider } from './AuthContext';
 
 function App() {
 
@@ -27,17 +28,19 @@ function App() {
     return isAuthenticated ? element : <Navigate to="/login"/>
   }
   return (
-    <div className='App'>
-      <RefreshHandler setIsAuthenticated={setIsAuthenticated} />
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<Navigate to="/login"/>}/>
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/home' element={<PrivateRoute element={<Home />}/>} />
-        <Route path='/create' element={<PrivateRoute element={<Create />}/>} />
-      </Routes>
-    </div>
+    <AuthProvider>
+      <div className='App'>
+        <RefreshHandler setIsAuthenticated={setIsAuthenticated} />
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Navigate to="/login"/>}/>
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/home' element={<PrivateRoute element={<Home />}/>} />
+          <Route path='/create' element={<PrivateRoute element={<Create />}/>} />
+        </Routes>
+      </div>
+    </AuthProvider>
   )
 }
 

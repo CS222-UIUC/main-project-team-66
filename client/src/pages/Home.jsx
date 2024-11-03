@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import { handleSuccess } from '../utils';
 import {ToastContainer} from 'react-toastify'
+import { useAuth } from '../AuthContext';
 
 function Home() {
   const [loggedInUser, setLoggedInUser] = useState('');
@@ -13,7 +14,9 @@ function Home() {
 
   // All of the logout functionality
   // Deletes stored token
+  const { logout } = useAuth();
   const handleLogout = (e)=> {
+    logout();
     localStorage.removeItem('token');
     localStorage.removeItem('loggedInUser');
     handleSuccess('User logged out');
