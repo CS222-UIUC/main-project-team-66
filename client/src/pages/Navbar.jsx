@@ -1,9 +1,23 @@
 import React from 'react'
 import { useAuth } from '../AuthContext';
+import { handleSuccess } from '../utils';
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
-
+  const navigate = useNavigate();
   const { user, logout } = useAuth();
+
+
+  const handleLogout = (e)=> {
+    logout();
+    handleSuccess('User logged out');
+    setTimeout(()=>{
+      navigate('/login');
+    },1000)
+  }
+  const handleCreatePost = (e) => {
+    navigate('/create');
+  }
 
   const showSideBar = (event) => {
     event.preventDefault();
@@ -23,18 +37,36 @@ function Navbar() {
           <li><a href="#">Browse</a></li>
           <li><a href="#">Cart</a></li>
           <li><a href="#">Seller</a></li>
+          {user && (
+            <li>
+              <a href="#" onClick={handleCreatePost}>Sell an Item</a>
+            </li>
+          )}
+          {user && (
+            <li>
+              <a href="#" onClick={handleLogout}>Logout</a>
+            </li>
+          )}
+         
         </ul>
         <ul>
           <li><a href="#">UIUC MarketPlace</a></li>
           <li className='hideOnMobile'><a href="#">Browse</a></li>
           <li className='hideOnMobile'><a href="#">Cart</a></li>
           <li className='hideOnMobile'><a href="#">Seller</a></li>
-          <li className='menu-button' aria-label="menu-button" onClick={showSideBar}><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#000000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
           {user && (
-          <li>
-            <button onClick={logout}>Logout</button>
-          </li>
-        )}
+            <li className='hideOnMobile'>
+              <a href="#" onClick={handleCreatePost}>Sell an Item</a>
+            </li>
+          )}
+          {user && (
+            <li className='hideOnMobile'>
+              <a href="#" onClick={handleLogout}>Logout</a>
+            </li>
+          )}
+         
+          <li className='menu-button' aria-label="menu-button" onClick={showSideBar}><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#000000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+         
         </ul>
     </nav>
   )
