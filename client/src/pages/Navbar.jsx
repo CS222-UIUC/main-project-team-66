@@ -8,14 +8,14 @@ function Navbar() {
   const { user, logout } = useAuth();
 
 
-  const handleLogout = (e)=> {
+  const handleLogout = ()=> {
     logout();
     handleSuccess('User logged out');
     setTimeout(()=>{
       navigate('/login');
     },1000)
   }
-  const handleCreatePost = (e) => {
+  const handleCreatePost = () => {
     navigate('/create');
   }
 
