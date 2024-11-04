@@ -38,12 +38,12 @@ function Navbar() {
           <li><a href="#">Cart</a></li>
           <li><a href="#">Seller</a></li>
           {user && (
-            <li>
+            <li aria-label="sell">
               <a href="#" onClick={handleCreatePost}>Sell an Item</a>
             </li>
           )}
           {user && (
-            <li>
+            <li aria-label="logout">
               <a href="#" onClick={handleLogout}>Logout</a>
             </li>
           )}
