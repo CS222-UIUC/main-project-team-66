@@ -73,67 +73,6 @@ function Create() {
     };
 
     return (
-        // <div className='container'>
-        //     <h1>Create New Post</h1>
-        //     <form onSubmit={handleSubmit}>
-        //         <div>
-        //             <label htmlFor="title">Title</label>
-        //             <input
-        //                 type="text"
-        //                 name="title"
-        //                 placeholder="Enter the title"
-        //                 value={itemInfo.title}
-        //                 onChange={handleChange}
-        //                 required
-        //             />
-        //         </div>
-        //         <div>
-        //             <label htmlFor="description">Description</label>
-        //             <textarea
-        //                 name="description"
-        //                 placeholder="Enter the description"
-        //                 value={itemInfo.description}
-        //                 onChange={handleChange}
-        //                 required
-        //             ></textarea>
-        //         </div>
-        //         <div>
-        //             <label htmlFor="price">Price</label>
-        //             <input
-        //                 type="number"
-        //                 name="price"
-        //                 placeholder="Enter the price"
-        //                 value={itemInfo.price}
-        //                 onChange={handleChange}
-        //                 required
-        //             />
-        //         </div>
-        //         <div>
-        //             <label htmlFor="category">Category</label>
-        //             <input
-        //                 type="text"
-        //                 name="category"
-        //                 placeholder="Enter the category"
-        //                 value={itemInfo.category}
-        //                 onChange={handleChange}
-        //                 required
-        //             />
-        //         </div>
-        //         <div>
-        //             <label htmlFor="images">Images</label>
-        //             <input
-        //                 type="file"
-        //                 multiple
-        //                 onChange={handleImageChange}
-        //             />
-        //         </div>
-        //         <button type="submit">Create Post</button>
-        //         <button onClick={handleHome}>Back to Home</button>
-
-        //     </form>
-        //     <ToastContainer />
-        // </div>
-
         <div className="container">
             <div className="sidebar"></div>
             <div className="main-content">
