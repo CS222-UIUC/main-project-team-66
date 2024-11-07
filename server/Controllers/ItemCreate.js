@@ -2,13 +2,13 @@ const ItemModel = require('../db/item');
 
 const createItem = async (req,res) => {
     try {
-        console.log("inside Create Item");
+        // console.log("inside Create Item");
         const { title, description, price, category, images } = req.body; 
-        console.log("The user is ")
-        console.log(req.user)
-        console.log("after")
+        // console.log("The user is ")
+        // console.log(req.user)
+        // console.log("after")
         const seller = req.user.email;  
-        console.log(seller)
+        // console.log(seller)
 
         const newItem = new ItemModel({
             title,
