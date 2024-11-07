@@ -7,6 +7,7 @@ const getItems = async (req, res) => {
         let items = await ItemModel.find({}, 'title description price category images seller createdAt')
             .sort({ createdAt: -1 }) 
             .limit(5);   
+
         console.log("Fetched items:", items);
               
         items = items.map(item => ({
@@ -18,6 +19,7 @@ const getItems = async (req, res) => {
             success: true,
             items
         });
+        
     } catch (error) {
         console.error(error);
         res.status(500).json({
