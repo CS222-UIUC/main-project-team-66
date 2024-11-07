@@ -2,7 +2,7 @@ const ItemModel = require('../db/item');
 
 const getItems = async (req, res) => {
     try {
-        console.log("Fetching the most recent 5 items from database");
+        // console.log("Fetching the most recent 5 items from database");
 
         let items = await ItemModel.find({}, 'title description price category images seller createdAt')
             .sort({ createdAt: -1 }) 

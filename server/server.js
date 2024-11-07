@@ -19,7 +19,10 @@ app.use(bodyParser.json());
 app.use('/auth', AuthRouter);
 app.use('/items', ItemRouter);
 
-app.get("/api", (req,res) => {});
+app.get("/api", (req,res) => {
+    console.log(req)
+    res.sendStatus(200);
+});
 
 app.listen(8080, () => {
     connectDB();
