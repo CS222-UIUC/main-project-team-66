@@ -1,7 +1,4 @@
-import React from 'react'
-import { useAuth } from '../AuthContext';
-import { handleSuccess } from '../utils';
-import { useNavigate } from 'react-router-dom';
+// import React from 'react'
 
 function Navbar() {
   const navigate = useNavigate();

@@ -4,6 +4,7 @@ body {
     padding: 0;
     height: 100%;
     font-family: "Playfair Display", serif;
+    color: #333;
 }
 .container {
     display: flex;
@@ -28,6 +29,7 @@ body {
     font-size: 2rem;
     margin-bottom: 2rem;
     font-family: "Playfair Display", serif;
+    color: #333;
   }
   .form-group {
     margin-bottom: 1.5rem;
@@ -35,6 +37,7 @@ body {
   label {
     display: block;
     margin-bottom: 0.5rem;
+    color: #333;
     /* font-weight: bold; */
   }
   input[type="text"],
