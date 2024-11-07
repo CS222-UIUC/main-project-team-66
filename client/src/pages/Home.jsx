@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import {useEffect, useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import { handleSuccess } from '../utils';
 import {ToastContainer} from 'react-toastify'
@@ -27,6 +27,7 @@ function Home() {
   // All of the logout functionality
   // Deletes stored token
   const handleLogout = (e)=> {
+    console.log(e)
     localStorage.removeItem('token');
     localStorage.removeItem('loggedInUser');
     handleSuccess('User logged out');
@@ -36,6 +37,7 @@ function Home() {
   }
 
   const handleCreatePost = (e) => {
+    console.log(e)
     navigate('/create');
   }
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { handleError, handleSuccess } from '../utils';
@@ -29,6 +29,7 @@ function Create() {
     };
 
     const handleHome = (e) => {
+        console.log(e);
         navigate('/home');
     }
 
@@ -38,6 +39,9 @@ function Create() {
         console.log('handle submit')
 
         const { title, description, price, category, images } = itemInfo;
+        if (images) {
+            console.log("need to handle images");
+        }
         if (!title || !description || !price || !category) {
             return handleError('All fields except images are required!');
         }
