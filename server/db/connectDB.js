@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const {mongoose} = require('mongoose')
 
 // creating a function to connect to the database
