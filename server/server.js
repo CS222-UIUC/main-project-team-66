@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const { connectDB } = require("./db/connectDB");
 const AuthRouter = require('./routes/AuthRouter');
 const ItemRouter = require('./routes/ItemRouter');
+// we need to add user router here 
 
 // loading in the environment variables 
 dotenv.config()
