@@ -8,7 +8,7 @@ const getItems = async (req, res) => {
             .sort({ createdAt: -1 }) 
             .limit(5);   
 
-        console.log("Fetched items:", items);
+        // console.log("Fetched items:", items);
               
         items = items.map(item => ({
             ...item.toObject(),
@@ -19,7 +19,7 @@ const getItems = async (req, res) => {
             success: true,
             items
         });
-        
+
     } catch (error) {
         console.error(error);
         res.status(500).json({
