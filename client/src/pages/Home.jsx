@@ -39,7 +39,8 @@ function Home() {
         <>
           {items.map((item) => (
             <div key={item._id} className='pro'>
-              <img src={ticket} alt="image" />
+              <img src={item.images[0]} alt={item.title} />
+              {/* <img src={ticket} alt="image" /> */}
               <div className='des'>
                   <span>{item.seller}</span>
                   <h5>{item.title}</h5>

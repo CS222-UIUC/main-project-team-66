@@ -20,8 +20,9 @@ const ItemSchema = new Schema({
         required: true
     },
     images: [{
-        type: String
-        // required: true
+        filename: String,        
+        contentType: String,      
+        imageData: Buffer        
     }],
     seller: {
         //type: mongoose.Schema.Types.ObjectId,
