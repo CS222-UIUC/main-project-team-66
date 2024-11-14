@@ -2,7 +2,7 @@ const Joi = require('joi');
 
 const itemValidation = (req, res, next) => {
     // console.log("Item validation")
-    // console.log("Request body:", req.body);
+    console.log("Request body:", req.body);
     const schema = Joi.object({
         title: Joi.string().min(3).max(100).required(),
         description: Joi.string().min(10).required(),

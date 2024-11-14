@@ -1,15 +1,16 @@
 import React, {useEffect, useState} from 'react'
 import {ToastContainer} from 'react-toastify'
-import ticket from '../assets_images/ticket.jpeg'
+// import ticket from '../assets_images/ticket.jpeg'
 import '../styles/Home.css'
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 
 function Home() {
-  const [loggedInUser, setLoggedInUser] = useState('');
+  // const [loggedInUser, setLoggedInUser] = useState('');
+  const [setLoggedInUser] = useState('');
   const [items, setItems] = useState([]);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(()=>{
     setLoggedInUser(localStorage.getItem('loggedInUser'))

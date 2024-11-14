@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import { handleError, handleSuccess } from '../utils';
+import { handleError } from '../utils';
 import '../styles/Create.css'
 
 function Create() {
@@ -43,9 +43,6 @@ function Create() {
         }).catch((error) => console.error("Error loading previews:", error));
     };
 
-    const handleHome = (e) => {
-        navigate('/home');
-    }
 
     // validating the input and saving
     const handleSubmit = async (e) => {
@@ -79,7 +76,7 @@ function Create() {
             const {success, message, error} = result;
 
             if (success) {
-                handleSuccess(message);
+                navigate('/home');
             } else if (error) {
                 // const details = error?.details(0).message;
                 //handleError(details);
@@ -181,8 +178,8 @@ function Create() {
                                 ))}
                             </div>
                         </div>
-                        <button type="submit" className="submit-button">Save</button>
-                        <button type="button" onClick={handleHome} className="submit-button">Back to Home</button>
+                        <button type="submit" className="submit-button">Submit</button>
+                        {/* <button type="button" onClick={handleHome} className="submit-button">Back to Home</button> */}
                     </form>
                 </div>
             </div>

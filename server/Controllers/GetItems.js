@@ -5,7 +5,7 @@ const getItems = async (req, res) => {
         // console.log("Fetching the most recent 5 items from database");
         let items = await ItemModel.find({}, 'title description price category images seller createdAt')
             .sort({ createdAt: -1 }) 
-            .limit(5);   
+            .limit(8);   
 
         // console.log("Fetched items:", items);
               

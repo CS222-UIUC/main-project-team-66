@@ -15,14 +15,14 @@ body {
     background-color: rgba(19, 41, 75, 0.8);
   }
   .main-content {
-    width: 75%;
+    width: 100%;
     background-color: white;
     padding: 2rem;
     box-sizing: border-box;
     overflow-y: auto;
   }
   .form-container {
-    max-width: 800px;
+    max-width: 90%;
     margin: 0 auto;
   }
   h1 {
@@ -44,7 +44,7 @@ body {
   input[type="number"],
   select,
   textarea {
-    width: 100%;
+    width: 95lvh;
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -82,6 +82,7 @@ body {
     border-radius: 4px;
     cursor: pointer;
     float: right;
+    margin-bottom: 40px;
   }
   .submit-button:hover {
     background-color: #c86e5b;
@@ -101,8 +102,8 @@ body {
       margin-top: 15px;
   }
   .preview-image {
-      width: 100px; 
-      height: 100px;
+      width: 400px; 
+      height: 200px;
       object-fit: cover;
       border: 1px solid #ddd;
       padding: 5px;
