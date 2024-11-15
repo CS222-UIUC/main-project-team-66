@@ -10,6 +10,7 @@ import RefreshHandler from './RefreshHandler';
 import Navbar from './pages/Navbar';
 import Create from './pages/Create';
 import { AuthProvider } from './AuthContext';
+import HomeSidebar from './pages/HomeSidebar';
 
 function App() {
   const fetchAPI = async () => {

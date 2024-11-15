@@ -4,6 +4,8 @@ import {ToastContainer} from 'react-toastify'
 import '../styles/Home.css'
 import axios from "axios";
 // import { useNavigate } from 'react-router-dom';
+import HomeSidebar from './HomeSidebar';
+
 
 
 function Home() {
@@ -28,6 +30,8 @@ function Home() {
   },[])
 
   return (
+    <div>
+      <HomeSidebar />
     <section id="product1" className='section-p1'>
       {/* <h1 className='welcome'>Welcome! {loggedInUser}</h1> */}
       <h2>Featured Products</h2>
@@ -61,6 +65,7 @@ function Home() {
       
       <ToastContainer />
     </section>
+    </div>
   )
 }
 

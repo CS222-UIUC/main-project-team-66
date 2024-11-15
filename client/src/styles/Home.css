@@ -6,6 +6,7 @@ h2 {
     margin: 20px;
     color: black;
     font-size: 50px;
+
 }
 
 
@@ -13,6 +14,7 @@ h2 {
     text-align: center;
     margin: 20px;
     overflow: hidden;
+    margin-left: 20%;
 }
 
 #product1 .pro-container{
