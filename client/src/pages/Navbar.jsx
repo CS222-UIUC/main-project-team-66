@@ -50,7 +50,7 @@ function Navbar() {
          
         </ul>
         <ul>
-          <li><a href="#">UIUC MarketPlace</a></li>
+          <li><a href="/home">UIUC MarketPlace</a></li>
           <li className='hideOnMobile'><a href="#">Browse</a></li>
           <li className='hideOnMobile'><a href="#">Cart</a></li>
           <li className='hideOnMobile'><a href="#">Seller</a></li>

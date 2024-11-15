@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const { connectDB } = require("./db/connectDB");
 const AuthRouter = require('./routes/AuthRouter');
 const ItemRouter = require('./routes/ItemRouter');
+// we need to add user router here 
 
 // loading in the environment variables 
 dotenv.config()
@@ -16,11 +17,12 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
 app.use('/auth', AuthRouter);
 app.use('/items', ItemRouter);
 
 app.get("/api", (req,res) => {
-    console.log(req)
+    //console.log(req)
     res.sendStatus(200);
 });
 

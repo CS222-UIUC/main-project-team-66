@@ -1,10 +1,27 @@
-const {itemValidation} = require('../Middleware/ItemValidation');
+// const {itemValidation} = require('../Middleware/ItemValidation');
 const {createItem} = require('../Controllers/ItemCreate');
 const {getItems} = require('../Controllers/GetItems');
 const Auth = require('../Middleware/Auth')
+// const multer = require('multer');
 
 const router = require('express').Router();
-router.post('/create', Auth, itemValidation, createItem);
+
+// const storage = multer.memoryStorage();
+// const upload = multer({
+//     storage: storage,
+//     limits: { fileSize: 5 * 1024 * 1024 }, 
+//     fileFilter: (req, file, cb) => {
+//         const allowedTypes = /jpeg|jpg|png|gif/;
+//         const isValidType = allowedTypes.test(file.mimetype);
+//         if (isValidType) {
+//             cb(null, true);
+//         } else {
+//             cb(new Error('Only JPEG, PNG, and GIF images are allowed.'));
+//         }
+//     }
+// }).array('images', 5);
+
+router.post('/create', Auth, createItem);
 router.get('/getitems', getItems);
   
 module.exports = router;
