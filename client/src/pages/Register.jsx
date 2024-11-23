@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {ToastContainer} from 'react-toastify'
 import { handleError, handleSuccess } from '../utils'
@@ -6,9 +6,6 @@ import { handleError, handleSuccess } from '../utils'
 // import illiniLogo from "@/assets_images/illinois_fighting_illini_logo_alternate_20141141.png";
 // import campusImage from 'client/src/assets_images/drawing-rear-view-bachelor-campus-walking-after-college-building-continuous-line-art_7647-2800.jpg copy.png';
 // import 'client/src/styles/Register.css';
-import illiniLogo from "../assets_images/illinois_fighting_illini_logo_alternate_20141141.png";
-import campusImage from '../assets_images/drawing-rear-view-bachelor-campus-walking-after-college-building-continuous-line-art_7647-2800.jpg copy.png';
-import '../styles/Login.css'
 
 function Register() {
 
@@ -66,48 +63,6 @@ function Register() {
 
 // Basic Registration Template - Frontend needs to fix
   return (
-    // <div className='container'>
-    //   <h1>Register</h1>
-    //   <form onSubmit={handleSignup}>
-    //     <div>
-    //       <label htmlFor="name">Name</label>
-    //       <input 
-    //           onChange={handleChange}
-    //           type="text"
-    //           name="name"
-    //           autoFocus
-    //           placeholder='Enter your name'
-    //           value={registerInfo.name}
-    //       />
-    //     </div>
-    //     <div>
-    //       <label htmlFor="email">Email</label>
-    //       <input
-    //           onChange={handleChange}
-    //           type="email"
-    //           name="email"
-    //           placeholder='Enter your email'
-    //           value={registerInfo.email}
-    //       />
-    //     </div>
-    //     <div>
-    //       <label htmlFor="password">Password</label>
-    //       <input 
-    //           onChange={handleChange}
-    //           type="password"
-    //           name="password"
-    //           placeholder='Enter your password...'
-    //           value={registerInfo.password}
-    //       />
-    //     </div>
-    //     <button type='submit'>Signup</button>
-    //     <span>Already have an account?
-    //         <Link to="/login">Login</Link>
-    //     </span>
-    //   </form>
-    //   <ToastContainer />
-    // </div>
-
     <div className="container">
       <div className="left-section">
         <h1>UIUC Marketplace</h1>
@@ -116,7 +71,7 @@ function Register() {
             Sign In
           </Link>
           <span className="sign-up"> | </span>
-          <Link to="/signup" className="sign-up">
+          <Link to="/register" className="sign-up">
             Sign Up
           </Link>
         </div>
