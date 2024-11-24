@@ -1,51 +1,52 @@
 import React, {useEffect, useState} from 'react'
+import { useLocation } from "react-router-dom";
 import {ToastContainer} from 'react-toastify'
-// import ticket from '../assets_images/ticket.jpeg'
-import '../styles/Home.css'
+import '../styles/Browse.css'
 import axios from "axios";
-// import { useNavigate } from 'react-router-dom';
 import HomeSidebar from './HomeSidebar';
 
 
 
-function Home() {
+
+function Browse() {
   const [loggedInUser, setLoggedInUser] = useState('');
-  // const [setLoggedInUser] = useState('');
   const [items, setItems] = useState([]);
-  // const navigate = useNavigate();
+  const location = useLocation(); 
 
   useEffect(()=>{
     setLoggedInUser(localStorage.getItem('loggedInUser'))
-    const fetchItems = async () => {
+    const fetchSearchItems = async () => {
       try {
-        //console.log("Inside fetch items");
-        const response = await axios.get('http://localhost:8080/items/getitems'); 
+        const searchParams = new URLSearchParams(location.search);
+        const searchQuery = Object.fromEntries(searchParams.entries());
+        console.log("Search Query: ", searchQuery);
+        const response = await axios.get("http://localhost:8080/items/filteritems", {
+          params: searchQuery, 
+        });
         setItems(response.data.items); 
       } catch (error) {
         console.error('Error fetching items:', error);
       }
     };
 
-    fetchItems();
-  },[])
+    fetchSearchItems();
+  },[location.search]);
 
   return (
     <div>
     <HomeSidebar />
     <section id="product1" className='section-p1'>
-      {/* <h1 className='welcome'>Welcome! {loggedInUser}</h1> */}
-      <h2>Featured Products</h2>
+      <h2>Showing Search Results</h2>
       <div className='pro-container'>
 
 
       {items.length === 0 ? (
-        <p>No items available</p>
+        <p>No items match your search</p>
       ) : (
         <>
           {items.map((item) => (
             <div key={item._id} className='pro'>
               <img src={item.images[0]} alt={item.title} />
-              {/* <img src={ticket} alt="image" /> */}
               <div className='des'>
                   <span>{item.seller}</span>
                   <h5>{item.title}</h5>
@@ -69,4 +70,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Browse

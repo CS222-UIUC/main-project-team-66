@@ -1,11 +1,13 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useAuth } from '../AuthContext';
 import { handleSuccess } from '../utils';
 import { useNavigate } from 'react-router-dom';
 
+
 function Navbar() {
   const navigate = useNavigate();
   const { user, logout } = useAuth();
+  const [searchInput, setSearchInput] = useState('');
 
 
   const handleLogout = ()=> {
@@ -30,15 +32,23 @@ function Navbar() {
     const sidebar = document.querySelector('.sidebar');
     sidebar.style.display = 'none'
   }
+
+  const handleSearch = async (event) => {
+    event.preventDefault(); 
+    console.log(searchInput);
+    navigate(`/browse?search=${encodeURIComponent(searchInput)}`);
+
+  }
+
   return (
     <nav className='nav'>
         <ul className='sidebar' style={{ display: 'none' }}>
 
           <li className='icon' aria-label="icon" onClick={hideSideBar}><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
-          <form action="">
+          <form action="" onSubmit={handleSearch}>
             <div className="search">
               <span class="search-icon material-symbols-outlined"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#808080"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg></span>
-              <input className="search-input" type="search" placeholder='Search'/>
+              <input className="search-input" type="search" placeholder='Search' value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
             </div>
           </form>
           {user && (
@@ -64,10 +74,10 @@ function Navbar() {
         </ul>
         <ul>
           <li><a href="/home">UIUC MarketPlace</a></li>
-          <form className="hideOnMobile" action="">
+          <form className="hideOnMobile" action="" onSubmit={handleSearch}>
             <div className="search">
               <span class="search-icon material-symbols-outlined"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#808080"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg></span>
-              <input className="search-input" type="search" placeholder='Search'/>
+              <input className="search-input" type="search" placeholder='Search' value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
             </div>
           </form>
           {/* <li className='hideOnMobile'><a href="#">Browse</a></li> */}

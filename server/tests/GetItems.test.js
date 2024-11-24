@@ -37,7 +37,7 @@ describe('getItems function', () => {
         await getItems(req, res);
 
         expect(res.json).toHaveBeenCalledWith({
-            message: "Most recent 5 items fetched successfully",
+            message: "Most recent 8 items fetched successfully",
             success: true,
             items: expect.arrayContaining(mockItems.map(item => expect.objectContaining(item)))
         });
@@ -54,7 +54,7 @@ describe('getItems function', () => {
         await getItems(req, res);
 
         expect(res.json).toHaveBeenCalledWith({
-            message: "Most recent 5 items fetched successfully",
+            message: "Most recent 8 items fetched successfully",
             success: true,
             items: []
         });
