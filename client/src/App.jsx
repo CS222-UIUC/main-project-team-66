@@ -13,6 +13,7 @@ import { AuthProvider } from './AuthContext';
 import HomeSidebar from './pages/HomeSidebar';
 
 function App() {
+
   const fetchAPI = async () => {
     const response = await axios.get("http://localhost:8080/api");
   };
