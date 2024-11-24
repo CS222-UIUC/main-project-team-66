@@ -9,8 +9,8 @@ import HomeSidebar from './HomeSidebar';
 
 
 function Home() {
-  // const [loggedInUser, setLoggedInUser] = useState('');
-  const [setLoggedInUser] = useState('');
+  const [loggedInUser, setLoggedInUser] = useState('');
+  // const [setLoggedInUser] = useState('');
   const [items, setItems] = useState([]);
   // const navigate = useNavigate();
 
