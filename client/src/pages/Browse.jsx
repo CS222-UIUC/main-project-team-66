@@ -1,25 +1,23 @@
 import React, {useEffect, useState} from 'react'
 import {ToastContainer} from 'react-toastify'
-// import ticket from '../assets_images/ticket.jpeg'
-import '../styles/Home.css'
+import '../styles/Browse.css'
 import axios from "axios";
-// import { useNavigate } from 'react-router-dom';
 import HomeSidebar from './HomeSidebar';
 
 
 
-function Home() {
+
+function Browse() {
   const [loggedInUser, setLoggedInUser] = useState('');
-  //const [setLoggedInUser] = useState('');
   const [items, setItems] = useState([]);
-  // const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(()=>{
     setLoggedInUser(localStorage.getItem('loggedInUser'))
     const fetchItems = async () => {
       try {
-        //console.log("Inside fetch items");
-        const response = await axios.get('http://localhost:8080/items/getitems'); 
+        console.log("Inside fetch items");
+        const response = await axios.get('http://localhost:8080/items/allitems'); 
         setItems(response.data.items); 
       } catch (error) {
         console.error('Error fetching items:', error);
@@ -29,20 +27,32 @@ function Home() {
     fetchItems();
   },[])
 
+  const filteredItems = items.filter((item) =>
+    item.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div>
     <HomeSidebar />
     <section id="product1" className='section-p1'>
-      {/* <h1 className='welcome'>Welcome! {loggedInUser}</h1> */}
-      <h2>Featured Products</h2>
+      <h2>Showing Search Results</h2>
+      <div className="search-bar">
+          <input
+            type="text"
+            placeholder="Search items..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)} 
+          />
+      </div>
+
       <div className='pro-container'>
 
 
-      {items.length === 0 ? (
-        <p>No items available</p>
+      {filteredItems.length === 0 ? (
+        <p>No items match your search</p>
       ) : (
         <>
-          {items.map((item) => (
+          {filteredItems.map((item) => (
             <div key={item._id} className='pro'>
               <img src={item.images[0]} alt={item.title} />
               {/* <img src={ticket} alt="image" /> */}
@@ -69,4 +79,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Browse

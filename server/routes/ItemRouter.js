@@ -1,6 +1,6 @@
 // const {itemValidation} = require('../Middleware/ItemValidation');
 const {createItem} = require('../Controllers/ItemCreate');
-const {getItems} = require('../Controllers/GetItems');
+const {getItems, getAllItems} = require('../Controllers/GetItems');
 const Auth = require('../Middleware/Auth')
 // const multer = require('multer');
 
@@ -23,5 +23,6 @@ const router = require('express').Router();
 
 router.post('/create', Auth, createItem);
 router.get('/getitems', getItems);
+router.get('/allitems', getAllItems);
   
 module.exports = router;
