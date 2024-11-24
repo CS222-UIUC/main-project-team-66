@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import { useLocation } from "react-router-dom";
 import {ToastContainer} from 'react-toastify'
 import '../styles/Browse.css'
 import axios from "axios";
@@ -10,52 +11,42 @@ import HomeSidebar from './HomeSidebar';
 function Browse() {
   const [loggedInUser, setLoggedInUser] = useState('');
   const [items, setItems] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const location = useLocation(); 
 
   useEffect(()=>{
     setLoggedInUser(localStorage.getItem('loggedInUser'))
-    const fetchItems = async () => {
+    const fetchSearchItems = async () => {
       try {
-        console.log("Inside fetch items");
-        const response = await axios.get('http://localhost:8080/items/allitems'); 
+        const searchParams = new URLSearchParams(location.search);
+        const searchQuery = Object.fromEntries(searchParams.entries());
+        console.log("Search Query: ", searchQuery);
+        const response = await axios.get("http://localhost:8080/items/filteritems", {
+          params: searchQuery, 
+        });
         setItems(response.data.items); 
       } catch (error) {
         console.error('Error fetching items:', error);
       }
     };
 
-    fetchItems();
-  },[])
-
-  const filteredItems = items.filter((item) =>
-    item.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+    fetchSearchItems();
+  },[location.search]);
 
   return (
     <div>
     <HomeSidebar />
     <section id="product1" className='section-p1'>
       <h2>Showing Search Results</h2>
-      <div className="search-bar">
-          <input
-            type="text"
-            placeholder="Search items..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)} 
-          />
-      </div>
-
       <div className='pro-container'>
 
 
-      {filteredItems.length === 0 ? (
+      {items.length === 0 ? (
         <p>No items match your search</p>
       ) : (
         <>
-          {filteredItems.map((item) => (
+          {items.map((item) => (
             <div key={item._id} className='pro'>
               <img src={item.images[0]} alt={item.title} />
-              {/* <img src={ticket} alt="image" /> */}
               <div className='des'>
                   <span>{item.seller}</span>
                   <h5>{item.title}</h5>

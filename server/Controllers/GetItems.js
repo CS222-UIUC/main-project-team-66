@@ -1,4 +1,4 @@
-const { get } = require('mongoose');
+// const { get } = require('mongoose');
 const ItemModel = require('../db/item');  
 
 const getItems = async (req, res) => {
@@ -43,6 +43,8 @@ const getAllItems = async (req, res) => {
             })
         }));
 
+        items = Array.isArray(items) ? items : [];
+
         res.status(200).json({
             message: "all items successfully",
             success: true,
@@ -85,8 +87,7 @@ const filterItems = async(req, res) => {
         }
 
         let items = await ItemModel.find(query, 'title description price category images seller createdAt')
-            .sort({ createdAt: -1 }) 
-            .limit(8);
+            .sort({ createdAt: -1 });
             
         items = items.map(item => ({
             ...item.toObject(),

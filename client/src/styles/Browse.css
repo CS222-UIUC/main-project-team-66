@@ -110,16 +110,3 @@ a {
     height: 50%;
     
 }
-
-.search-bar {
-    margin: 20px 0;
-    text-align: center;
-  }
-  
-  .search-bar input {
-    width: 80%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-  }
