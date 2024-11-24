@@ -1,13 +1,14 @@
 const Joi = require('joi');
 
 const itemValidation = (req, res, next) => {
-    console.log("Item validation")
+    // console.log("Item validation")
+    console.log("Request body:", req.body);
     const schema = Joi.object({
         title: Joi.string().min(3).max(100).required(),
         description: Joi.string().min(10).required(),
         price: Joi.number().min(0).required(),
         category: Joi.string().required(),
-        images: Joi.array().items(Joi.string()).optional(), 
+        // images: Joi.array().items(Joi.string()).optional(), 
     });
 
     const { error } = schema.validate(req.body);

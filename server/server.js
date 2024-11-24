@@ -17,11 +17,12 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
 app.use('/auth', AuthRouter);
 app.use('/items', ItemRouter);
 
 app.get("/api", (req,res) => {
-    console.log(req)
+    //console.log(req)
     res.sendStatus(200);
 });
 
