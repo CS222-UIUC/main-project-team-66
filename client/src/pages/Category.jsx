@@ -5,8 +5,6 @@ function Category() {
     const [selectedCategory, setSelectedCateogory] = useState(null)
     const [query, setQuery] = useState("")
 
-    
-
   return (
     <div className='ml'>
         <h2 className='sidebar-title'>Category</h2>

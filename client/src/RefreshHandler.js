@@ -14,6 +14,7 @@ function RefreshHandler({setIsAuthenticated}) {
                 location.pathname === '/login' ||
                 location.pathname === '/register'
             ){
+                console.log("Navigated to home because of RefreshHandler");
                 navigate('/home', {replace: false});
             }
         }
