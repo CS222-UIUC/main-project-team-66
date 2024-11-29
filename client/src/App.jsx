@@ -10,6 +10,7 @@ import RefreshHandler from './RefreshHandler';
 import Navbar from './pages/Navbar';
 import Create from './pages/Create';
 import Browse from './pages/Browse';
+import ProductDetail from './pages/ProductDetail';
 import { AuthProvider } from './AuthContext';
 import HomeSidebar from './pages/HomeSidebar';
 
@@ -42,6 +43,7 @@ function App() {
           <Route path='/home' element={<PrivateRoute element={<Home />} />} />
           <Route path='/create' element={<PrivateRoute element={<Create />} />} />
           <Route path='/browse' element={<PrivateRoute element={<Browse />} />} />
+          <Route path='/product/:id' element={<PrivateRoute element={<ProductDetail />} />} />
         </Routes>
       </div>
     </AuthProvider>

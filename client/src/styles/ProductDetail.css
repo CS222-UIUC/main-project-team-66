@@ -1,0 +1,244 @@
+.product-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif, "Baskerville Old Face", "Goudy Old Style", Garamond, "Times New Roman", serif;
+}
+
+.back-to-home {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #e07b67;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.back-to-home svg {
+    margin-right: 8px;
+}
+
+.back-to-home:hover {
+    color: #be5f4c;
+}
+
+.product-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.product-image {
+    flex: 0,0,40%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    /* width: 45%; */
+}
+
+.product-info {
+    flex: 1;
+    max-width: 50%;
+}
+
+.product-info h2 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-description {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    /* color: rgb(172, 71, 71); */
+    line-height: 1.6;
+}
+
+.product-info h4 {
+    font-size: 1.5rem;
+    color: #20457e;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.product-info p {
+    font-size: 1rem;
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif, "Baskerville Old Face", "Goudy Old Style", Garamond, "Times New Roman", serif;
+    margin: 5px 0;
+}
+
+.add-to-cart-btn {
+    background-color: #e07b67;
+    color: white;
+    font-size: 1rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #be5f4c;
+    transform: scale(1.05);
+}
+
+.add-to-cart-btn:active {
+    background-color: #a65242;
+}
+
+
+
+#product {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    margin-top: 10%;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#product h2 {
+    font-size: 2.5rem;
+}
+
+#product .pro-container-related{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#product .prod {
+    background-color: white;
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #7896c4;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0,0, 0.02);
+    margin: 15px 0;
+    transition: 0.2 ease;
+    position: relative;
+    box-sizing: border-box;
+}
+
+#product .prod:hover{
+    box-shadow: 20px 20px 30px rgba(0, 0,0, 0.06);
+}
+
+#product .prod img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+#product .prod .desc{
+    text-align: start;
+    padding: 10px 0;
+}
+
+#product .prod .desc span{
+    color: #606063;
+    font-size: 12px;
+
+}
+
+#product .prod .desc h5 {
+    padding-top: 7px;
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+#product .prod .desc h6 {
+    padding-top: 7px;
+    color: #606063;
+    font-size: 13px;
+}
+
+#product .prod .desc h4 {
+    padding-top: 7px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #13294B;
+}
+
+
+#product .prod .cart{
+    margin-top: 7px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 60px;
+    background-color: #96b3df;
+    font-weight: 500;
+    color:#13294B;
+    border: 1px solid #7896c4;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
+
+a {
+    display: block; 
+    text-align: center;
+    width: auto;
+    height: auto;
+    text-decoration: none;
+}
+
+#product .prod .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    
+}
+
+
+
+@media (max-width: 768px) {
+    .product-detail {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-image {
+        width: 80%;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .product-image img {
+        width: 90vw;
+        /* margin-bottom: 20px; */
+        object-fit: contain;
+    }
+
+    .product-info {
+        max-width: 100%;
+        text-align: left;
+    }
+    .product-info h2 {
+        margin: 0;
+        text-align: left;
+    }
+}
