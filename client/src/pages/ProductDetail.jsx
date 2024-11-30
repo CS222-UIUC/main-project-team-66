@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../styles/ProductDetail.css';
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import ticket from '../assets_images/ticket.jpeg'
 import { Link } from 'react-router-dom';
+import { useCart } from '../CartContext';
 
 function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [relatedProducts, setRelatedProducts] = useState([]);
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProductDetails = async () => {
@@ -49,6 +53,11 @@ function ProductDetail() {
 
   if (!product) return <div>Loading...</div>;
 
+  const handleAddToCart = (product) => {
+    addToCart(product, 1);
+    navigate('/cart');
+  };
+
   return (
     <div className="product-detail-container">
       <Link to="/home" className="back-to-home"> <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#000000"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg>Back to Home</Link>
@@ -62,7 +71,7 @@ function ProductDetail() {
           <h4>Price: ${product.price}</h4>
           <p>Seller: {product.seller}</p>
           <p>Category: {product.category}</p>
-          <button className="add-to-cart-btn">Add to Cart</button>
+          <button className="add-to-cart-btn" onClick={() => handleAddToCart(product)}>Add to Cart</button>
         </div>
       </div>
     

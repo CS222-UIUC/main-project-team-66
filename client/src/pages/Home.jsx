@@ -6,6 +6,7 @@ import axios from "axios";
 // import { useNavigate } from 'react-router-dom';
 import HomeSidebar from './HomeSidebar';
 import { Link } from 'react-router-dom';
+// import { useCart } from '../CartContext';
 
 
 
@@ -14,6 +15,7 @@ function Home() {
   // const [setLoggedInUser] = useState('');
   const [items, setItems] = useState([]);
   // const navigate = useNavigate();
+  // const { addToCart } = useCart();
 
   useEffect(()=>{
     setLoggedInUser(localStorage.getItem('loggedInUser'))
@@ -28,7 +30,11 @@ function Home() {
     };
 
     fetchItems();
-  },[])
+  },[]);
+
+  // const handleAddToCart = (item) => {
+  //   addToCart(item, 1);
+  // };
 
   return (
     <div>
