@@ -12,7 +12,9 @@ import Create from './pages/Create';
 import Browse from './pages/Browse';
 import ProductDetail from './pages/ProductDetail';
 import { AuthProvider } from './AuthContext';
+import { CartProvider } from './CartContext';
 import HomeSidebar from './pages/HomeSidebar';
+import ViewCart from './pages/ViewCart';
 
 function App() {
 
@@ -33,19 +35,22 @@ function App() {
 
   return (
     <AuthProvider>
-      <div className='App'>
-        <RefreshHandler setIsAuthenticated={setIsAuthenticated} />
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<Navigate to="/login" />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/home' element={<PrivateRoute element={<Home />} />} />
-          <Route path='/create' element={<PrivateRoute element={<Create />} />} />
-          <Route path='/browse' element={<PrivateRoute element={<Browse />} />} />
-          <Route path='/product/:id' element={<PrivateRoute element={<ProductDetail />} />} />
-        </Routes>
-      </div>
+      <CartProvider>
+        <div className='App'>
+          <RefreshHandler setIsAuthenticated={setIsAuthenticated} />
+          <Navbar />
+          <Routes>
+            <Route path='/' element={<Navigate to="/login" />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/home' element={<PrivateRoute element={<Home />} />} />
+            <Route path='/create' element={<PrivateRoute element={<Create />} />} />
+            <Route path='/browse' element={<PrivateRoute element={<Browse />} />} />
+            <Route path='/cart' element={<PrivateRoute element={<ViewCart />} />} />
+            <Route path='/product/:id' element={<PrivateRoute element={<ProductDetail />} />} />
+          </Routes>
+        </div>
+      </CartProvider>
     </AuthProvider>
   );
 }
