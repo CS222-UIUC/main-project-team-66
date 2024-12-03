@@ -16,25 +16,26 @@ function ProductDetail() {
 
   useEffect(() => {
     const fetchProductDetails = async () => {
-    //   try {
-    //     const response = await axios.get(`http://localhost:8080/items/getitem/${id}`);
-    //     setProduct(response.data);
-    //   } catch (error) {
-    //     console.error('Could not fetch product', error);
-    //   }
+      try {
+        const response = await axios.get(`http://localhost:8080/items/itemid/${id}`);
+        setProduct(response.data.itemt);
+        console.log(response.data);
+      } catch (error) {
+        console.error('Could not fetch product', error);
+      }
 
-        // Get rid of this dummy data once the backend is implemented. Also get rid of the comment once that is done.
-        const dummyProduct = {
-            _id: id,
-            title: 'Ticket',
-            description: 'This is a sample description. This is a sample description. This is a sample description. This is a sample description. This is a sample description.',
-            price: 10,
-            seller: 'Khushi',
-            category: 'Sports',
-            images: [ticket],
-        };
+        // // Get rid of this dummy data once the backend is implemented. Also get rid of the comment once that is done.
+        // const dummyProduct = {
+        //     _id: id,
+        //     title: 'Ticket',
+        //     description: 'This is a sample description. This is a sample description. This is a sample description. This is a sample description. This is a sample description.',
+        //     price: 10,
+        //     seller: 'Khushi',
+        //     category: 'Sports',
+        //     images: [ticket],
+        // };
 
-      setProduct(dummyProduct);
+      // setProduct(dummyProduct);
     };
 
     const fetchRelatedProducts = async () => {

@@ -30,7 +30,7 @@ describe('getAllItems function', () => {
 
         await getAllItems(req, res);
 
-        expect(ItemModel.find).toHaveBeenCalledWith({}, 'title description price category images seller createdAt');
+        expect(ItemModel.find).toHaveBeenCalledWith({}, '_id title description price category images seller createdAt');
         expect(res.json).toHaveBeenCalledWith({
             message: "all items successfully",
             success: true,
@@ -45,7 +45,7 @@ describe('getAllItems function', () => {
 
         await getAllItems(req, res);
 
-        expect(ItemModel.find).toHaveBeenCalledWith({}, 'title description price category images seller createdAt');
+        expect(ItemModel.find).toHaveBeenCalledWith({}, '_id title description price category images seller createdAt');
         expect(res.json).toHaveBeenCalledWith({
             message: "all items successfully",
             success: true,

@@ -24,6 +24,7 @@ function Home() {
         //console.log("Inside fetch items");
         const response = await axios.get('http://localhost:8080/items/getitems'); 
         setItems(response.data.items); 
+        // console.log(items[0]._id);
       } catch (error) {
         console.error('Error fetching items:', error);
       }
