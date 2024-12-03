@@ -3,10 +3,11 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {ToastContainer} from 'react-toastify'
 import { handleError, handleSuccess } from '../utils'
-// import illiniLogo from "client/src/assets_images/illinois_fighting_illini_logo_alternate_20141141.png";
-// import illiniLogo from "@/assets_images/illinois_fighting_illini_logo_alternate_20141141.png";
-// import campusImage from 'client/src/assets_images/drawing-rear-view-bachelor-campus-walking-after-college-building-continuous-line-art_7647-2800.jpg copy.png';
-// import 'client/src/styles/Register.css';
+
+import illiniLogo from '../assets_images/illinois_fighting_illini_logo_alternate_20141141.png';
+import campusImage from '../assets_images/drawing-rear-view-bachelor-campus-walking-after-college-building-continuous-line-art_7647-2800.jpg copy.png';
+import '../styles/Register.css'
+
 
 function Register() {
 

@@ -26,7 +26,7 @@ router.post('/create', Auth, createItem);
 router.get('/getitems', getItems);
 router.get('/allitems', getAllItems);
 router.get('/filteritems', filterItems);
-router.get('/getuseritems', Auth, getUserItems);
+router.get('/getuseritems', getUserItems);
 router.get('/itemid/:id', getItemID);
   
 module.exports = router;

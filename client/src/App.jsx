@@ -10,6 +10,7 @@ import RefreshHandler from './RefreshHandler';
 import Navbar from './pages/Navbar';
 import Create from './pages/Create';
 import Browse from './pages/Browse';
+import Profile from './pages/Profile';
 import ProductDetail from './pages/ProductDetail';
 import { AuthProvider } from './AuthContext';
 import { CartProvider } from './CartContext';
@@ -48,6 +49,7 @@ function App() {
             <Route path='/browse' element={<PrivateRoute element={<Browse />} />} />
             <Route path='/cart' element={<PrivateRoute element={<ViewCart />} />} />
             <Route path='/product/:id' element={<PrivateRoute element={<ProductDetail />} />} />
+            <Route path='/profile' element={<PrivateRoute element={<Profile />} />} />
           </Routes>
         </div>
       </CartProvider>
