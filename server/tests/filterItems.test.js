@@ -45,7 +45,7 @@ describe('filterItems function', () => {
                 category: 'Electronics',
                 $or: expect.any(Array),
             }),
-            'title description price category images seller createdAt'
+            '_id title description price category images seller createdAt'
         );
 
         expect(res.json).toHaveBeenCalledWith({
@@ -92,7 +92,7 @@ describe('filterItems function', () => {
             expect.objectContaining({
                 price: { $gte: 100, $lte: 200 },
             }),
-            'title description price category images seller createdAt'
+            '_id title description price category images seller createdAt'
         );
 
         expect(res.json).toHaveBeenCalledWith({
@@ -126,7 +126,7 @@ describe('filterItems function', () => {
             expect.objectContaining({
                 $or: expect.any(Array),
             }),
-            'title description price category images seller createdAt'
+            '_id title description price category images seller createdAt'
         );
 
         expect(res.json).toHaveBeenCalledWith({
