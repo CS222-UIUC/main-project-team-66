@@ -93,14 +93,14 @@ function Create() {
 
     return (
         <div className="container">
-            <div className="sidebar"></div>
+            <div className="sbar"></div>
             <div className="main-content">
-                <div className="form-container">
-                    <h1>Post a new Product!</h1>
+                <div className="frm-container">
+                    <h1 className='title'>Post a new Product!</h1>
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
-                            <label htmlFor="title">Product Name</label>
-                            <input
+                            <label className="create-label" htmlFor="title">Product Name</label>
+                            <input className='input-create'
                                 type="text"
                                 id="title"
                                 name="title"
@@ -110,8 +110,9 @@ function Create() {
                             />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="category">Category</label>
+                            <label className="create-label" htmlFor="category">Category</label>
                             <select
+                                className='input-create'
                                 id="category"
                                 name="category"
                                 value={itemInfo.category}
@@ -126,8 +127,9 @@ function Create() {
                             </select>
                         </div>
                         <div className="form-group">
-                            <label htmlFor="description">Description</label>
+                            <label className="create-label" htmlFor="description">Description</label>
                             <textarea
+                                className='input-create'
                                 id="description"
                                 name="description"
                                 value={itemInfo.description}
@@ -136,8 +138,9 @@ function Create() {
                             ></textarea>
                         </div>
                         <div className="form-group">
-                            <label htmlFor="price">Price</label>
+                            <label className="create-label" htmlFor="price">Price</label>
                             <input
+                                className='input-create'
                                 type="number"
                                 id="price"
                                 name="price"
@@ -149,7 +152,7 @@ function Create() {
                             />
                         </div>
                         <div className="form-group">
-                            <label>Upload product media</label>
+                            <label className="create-label">Upload product media</label>
                             <div className="upload-area" onClick={() => fileInputRef.current.click()}>
                                 <div className="upload-icon">&#x2B06;</div>
                                 <p className="upload-text">
@@ -158,6 +161,7 @@ function Create() {
                                 </p>
                                 <p className="upload-formats">(Formats JPG, PNG, JPEG)</p>
                                 <input
+                                    className='input-create'
                                     type="file"
                                     ref={fileInputRef}
                                     multiple

@@ -2,57 +2,59 @@
 .container {
     display: flex;
     min-height: 100vh;
+    font-family: Georgia, 'Times New Roman', Times, serif, "Baskerville Old Face", "Goudy Old Style", Garamond, "Times New Roman", serif;
   }
-  .sidebar {
+  .sbar {
     width: 25%;
     background-color: rgba(19, 41, 75, 0.8);
   }
+
+  .title {
+    margin-bottom: 15px;
+  }
   .main-content {
-    width: 100%;
-    background-color: white;
+    width: 75%;
+    overflow: hidden;
+    /* background-color: white; */
     padding: 2rem;
     box-sizing: border-box;
     overflow-y: auto;
+    margin-right: 30px;
   }
-  .form-container {
-    max-width: 90%;
+  .frm-container {
+    max-width: 100%;
     margin: 0 auto;
   }
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    font-family: "Playfair Display", serif;
-    color: #333;
-  }
+
   .form-group {
     margin-bottom: 1.5rem;
   }
-  label {
+  .create-label {
     display: block;
     margin-bottom: 0.5rem;
     color: #333;
     /* font-weight: bold; */
   }
-  input[type="text"],
-  input[type="number"],
-  select,
-  textarea {
-    width: 95lvh;
+  .input-create {
+    width: 100%;
     padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 2px solid #6b646478;
+    border-radius: 8px;
     box-sizing: border-box;
     color: #333;
+    margin-right: 30px;
+    background-color: transparent;
   }
   textarea {
     min-height: 100px;
   }
   .upload-area {
-    border: 2px dashed #ccc;
+    width: auto;
+    border: 2px dashed #6b646478;
     border-radius: 4px;
     padding: 2rem;
     text-align: center;
-    background-color: #fff5f5;
+    background-color: transparent;
   }
   .upload-icon {
     font-size: 2rem;
@@ -75,18 +77,12 @@
     border-radius: 4px;
     cursor: pointer;
     float: right;
-    margin-bottom: 40px;
+    margin-bottom: 15px;
   }
   .submit-button:hover {
     background-color: #c86e5b;
   }
-  .upload-area {
-    padding: 20px;
-    border: 2px dashed #ddd;
-    text-align: center;
-    background-color: #fafafa;
-    position: relative;
-  }
+
   .image-previews {
       display: flex;
       flex-wrap: wrap;
