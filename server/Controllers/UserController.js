@@ -1,4 +1,4 @@
-const UserModel = require('../db/user')
+const UserModel = require('../db/user');
 
 // function to get or search all users
 const getAllUsers = async (req, res) => {
