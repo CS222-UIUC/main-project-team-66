@@ -1,8 +1,9 @@
-// const {itemValidation} = require('../Middleware/ItemValidation');
+const {itemValidation} = require('../Middleware/ItemValidation');
 const {createItem} = require('../Controllers/ItemCreate');
 const {getItems, getAllItems, filterItems, getItemID} = require('../Controllers/GetItems');
 const Auth = require('../Middleware/Auth')
 // const multer = require('multer');
+const {getUserItems } = require('../Controllers/UserItems');
 
 const router = require('express').Router();
 
@@ -25,7 +26,7 @@ router.post('/create', Auth, createItem);
 router.get('/getitems', getItems);
 router.get('/allitems', getAllItems);
 router.get('/filteritems', filterItems);
+router.get('/getuseritems', Auth, getUserItems);
 router.get('/itemid/:id', getItemID);
-
   
 module.exports = router;
