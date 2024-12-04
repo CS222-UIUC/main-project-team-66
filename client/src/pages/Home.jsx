@@ -39,7 +39,7 @@ function Home() {
 
   return (
     <div>
-    <HomeSidebar />
+    {/* <HomeSidebar /> */}
     <section id="product1" className='section-p1'>
       {/* <h1 className='welcome'>Welcome! {loggedInUser}</h1> */}
       <h2>Featured Products</h2>

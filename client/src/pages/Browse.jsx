@@ -33,7 +33,7 @@ function Browse() {
   return (
     <div>
     <HomeSidebar />
-    <section id="product1" className='section-p1'>
+    <section id="product2" className='section-p1'>
       <h2>Showing Search Results</h2>
       <div className='pro-container'>
 

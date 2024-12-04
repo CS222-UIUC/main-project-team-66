@@ -62,23 +62,17 @@ function Login() {
   };
 
   return (
-    <div className="container">
+    <div className="contain">
       <div className="left-section">
-        <h1>UIUC Marketplace</h1>
+        <h1 className='name'>UIUC Marketplace</h1>
         <div className="sign-options">
-          <Link to="/login" className="sign-in">
-            Sign In
-          </Link>
-          <span className="separator"> | </span>
-          <Link to="/register" className="sign-up">
-            Sign Up
-          </Link>
         </div>
         <div className="form-container">
-          <h2>Welcome Back Illini!</h2>
+          <h2 className='intro'>Welcome Back Illini!</h2>
           <form onSubmit={handleLogin}>
-            <label htmlFor="email">Email ID</label>
+            <label className='lbl' htmlFor="email">Email ID</label>
             <input
+              className='input-login'
               onChange={handleChange}
               type="email"
               name="email"
@@ -87,8 +81,9 @@ function Login() {
               value={loginInfo.email}
               required
             />
-            <label htmlFor="password">Password</label>
+            <label className='lbl' htmlFor="password">Password</label>
             <input
+              className='input-login'
               onChange={handleChange}
               type="password"
               name="password"
@@ -97,7 +92,10 @@ function Login() {
               value={loginInfo.password}
               required
             />
-            <button type="submit">Sign In</button>
+              <Link to="/register" className="sign-in">
+              Don't have an account? --- Register
+            </Link>
+            <button className='sub-btn' type="submit">Sign In</button>
           </form>
         </div>
       </div>

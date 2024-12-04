@@ -65,23 +65,17 @@ function Register() {
 
 // Basic Registration Template - Frontend needs to fix
   return (
-    <div className="container">
+    <div className="contain">
       <div className="left-section">
-        <h1>UIUC Marketplace</h1>
+        <h1 className='name'>UIUC Marketplace</h1>
         <div className="sign-options">
-          <Link to="/login" className="sign-in">
-            Sign In
-          </Link>
-          <span className="sign-up"> | </span>
-          <Link to="/register" className="sign-up">
-            Sign Up
-          </Link>
         </div>
         <div className="form-container">
-          <h2>Welcome Illini!</h2>
+          <h2 className='intro'>Welcome Illini!</h2>
           <form onSubmit={handleSignup}>
-            <label htmlFor="name">Name</label>
+            <label className='lbl' htmlFor="name">Name</label>
             <input
+              className='input-reg'
               onChange={handleChange}
               type="text"
               name="name"
@@ -90,8 +84,9 @@ function Register() {
               value={registerInfo.name}
               required
             />
-            <label htmlFor="email">Email ID</label>
+            <label className='lbl' htmlFor="email">Email ID</label>
             <input
+              className='input-reg'
               onChange={handleChange}
               type="email"
               name="email"
@@ -100,8 +95,9 @@ function Register() {
               value={registerInfo.email}
               required
             />
-            <label htmlFor="password">Password</label>
+            <label className='lbl' htmlFor="password">Password</label>
             <input
+              className='input-reg'
               onChange={handleChange}
               type="password"
               name="password"
@@ -118,7 +114,11 @@ function Register() {
               placeholder="Confirm your password"
               required
             /> */}
-            <button type="submit">Next</button>
+            <Link to="/login" className="sign-in">
+            Already have an account? --- Login
+          </Link>
+        
+            <button className='bttn' type="submit">Next</button>
           </form>
         </div>
       </div>
