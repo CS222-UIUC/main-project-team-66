@@ -4,6 +4,8 @@ const getUserItems = async (req, res) => {
     try {
         // console.log("Fetching User's own published items");
         const userId = req.user.email;
+        // console.log("Inside user Items")
+        // console.log("user id is", userId);
         let items = await ItemModel.find({ seller: userId}, 'title description price category images seller createdAt')
             .sort({ createdAt: -1 }) 
             //.limit(5);   

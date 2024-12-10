@@ -120,6 +120,7 @@ const filterItems = async(req, res) => {
 const getItemID = async (req, res) => {
     try {
         const { id } = req.params;
+        console.log(typeof(id));
 
         const item = await ItemModel.findById(id);
 

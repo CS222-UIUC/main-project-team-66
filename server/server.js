@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const { connectDB } = require("./db/connectDB");
 const AuthRouter = require('./routes/AuthRouter');
 const ItemRouter = require('./routes/ItemRouter');
+const UserRouter = require('./routes/UserRouter');
 // we need to add user router here 
 
 // loading in the environment variables 
@@ -20,6 +21,7 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/auth', AuthRouter);
 app.use('/items', ItemRouter);
+app.use('/users', UserRouter)
 
 app.get("/api", (req,res) => {
     //console.log(req)

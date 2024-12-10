@@ -11,7 +11,7 @@ function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [relatedProducts, setRelatedProducts] = useState([]);
-  const { addToCart } = useCart();
+  // const { addToCart } = useCart();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -46,13 +46,29 @@ function ProductDetail() {
         } catch (error) {
           console.error('Error fetching items:', error);
         }
-      };
+      }; 
 
     fetchProductDetails();
     fetchRelatedProducts();
   }, [id]);
 
   if (!product) return <div>Loading...</div>;
+  
+  const addToCart = async (product, quantity) => {
+    try {
+        const response = await axios.post('http://localhost:8080/users/addtocart', {
+            productId: product._id,
+            quantity,
+        }, {
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+          },
+        });
+        console.log('Cart updated:', response.data);
+    } catch (error) {
+        console.error('Error adding to cart:', error);
+    }
+  };
 
   const handleAddToCart = (product) => {
     addToCart(product, 1);

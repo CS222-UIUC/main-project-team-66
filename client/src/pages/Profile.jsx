@@ -17,7 +17,7 @@ function Profile() {
   useEffect(() => {
     const fetchUserItems = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/items/user-items');
+        const response = await axios.get('http://localhost:8080/items/getuseritems');
           setUserItems(response.data.items);
       } catch (err) {
         console.error('Failed to fetch user items');
