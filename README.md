@@ -1,4 +1,4 @@
-# main-project-team-66
+# UIUC Marketplace
 
 # Introduction 
 
